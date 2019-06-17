@@ -9,38 +9,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.NamedStoredProcedureQueries;
 import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureParameter;
 
 @Entity(name = "chuyenxe")
-@NamedStoredProcedureQueries({
-	@NamedStoredProcedureQuery(
-			name = "ChuyenXe.sp_admin_create_ChuyenXe",
-			procedureName = "sp_admin_create_ChuyenXe",
-			parameters = {
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "id_taixe", type = Integer.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "id_xe", type = Integer.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "diemxuatphat", type = String.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "diemden", type = String.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "thoigiandi", type = java.sql.Date.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "thoigianden", type = java.sql.Date.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "giave", type = Integer.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "so_ghe_trong", type = Integer.class),
-					@StoredProcedureParameter(mode = ParameterMode.OUT, name = "id", type = Integer.class)
-			},
-			resultClasses = Integer.class),
-	@NamedStoredProcedureQuery(
-			name = "sp_admin_create_ChucVu",
-			procedureName = "sp_admin_create_ChucVu",
-			parameters = {
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "tenchuvu", type = String.class),
-					@StoredProcedureParameter(mode = ParameterMode.IN, name = "ghichu", type = String.class),
-					@StoredProcedureParameter(mode = ParameterMode.OUT, name = "id", type = Integer.class)
-			},
-			resultClasses = Integer.class)
-})
+//@NamedStoredProcedureQueries({
+//	@NamedStoredProcedureQuery(
+//			name = "ChuyenXe.sp_admin_create_ChuyenXe",
+//			procedureName = "sp_admin_create_ChuyenXe",
+//			parameters = {
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "id_taixe", type = Integer.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "id_xe", type = Integer.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "diemxuatphat", type = String.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "diemden", type = String.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "thoigiandi", type = java.sql.Date.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "thoigianden", type = java.sql.Date.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "giave", type = Integer.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "so_ghe_trong", type = Integer.class),
+//					@StoredProcedureParameter(mode = ParameterMode.OUT, name = "id", type = Integer.class)
+//			},
+//			resultClasses = Integer.class),
+//	@NamedStoredProcedureQuery(
+//			name = "sp_admin_create_ChucVu",
+//			procedureName = "sp_admin_create_ChucVu",
+//			parameters = {
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "tenchuvu", type = String.class),
+//					@StoredProcedureParameter(mode = ParameterMode.IN, name = "ghichu", type = String.class),
+//					@StoredProcedureParameter(mode = ParameterMode.OUT, name = "id", type = Integer.class)
+//			},
+//			resultClasses = Integer.class)
+//})
+//@NamedQuery(name = "ChuyenXe.test", query = "select u from ChuyenXe u where u.id = ?1")
 
 public class ChuyenXe {
 

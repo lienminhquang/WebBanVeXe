@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.model.ChuyenXe;
 import com.app.repo.DB1.DB1ChuyenXeRepo;
-import com.app.repo.DB1.MyImplement;
+
 
 @Service
 public class ChuyenXeSer {
@@ -23,8 +23,7 @@ public class ChuyenXeSer {
 	@Autowired
 	private DB1ChuyenXeRepo chuyenXeRepo;
 	
-	@Autowired
-	private MyImplement impl;
+
 	
 	public ArrayList<ChuyenXe> getAll(){
 		return (ArrayList<ChuyenXe>) chuyenXeRepo.findAll();
@@ -44,10 +43,10 @@ public class ChuyenXeSer {
 		
 		Integer id = -1;
 		
-		id = impl.sp_admin_create_ChucVu("fff", "ff");
-		System.out.println("***************************************" + id + "******************************************");
+		ChuyenXe cx2 = chuyenXeRepo.test(1);
+		System.out.println("***************************************" + cx2.getId() + "******************************************");
 		
-		id = chuyenXeRepo.sp_admin_create_ChuyenXe(cx.getTaiXe().getId(), cx.getXe().getId(), cx.getDiemXuatPhat(), cx.getDiemDen(),new Date(cx.getThoiGianDi().getTime()), new Date (cx.getThoiGianDen().getTime()), cx.getGiave(), cx.getSoGheTrong());
+		
 		
 		
 		
